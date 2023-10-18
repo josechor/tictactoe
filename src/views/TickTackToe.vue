@@ -18,14 +18,13 @@ function handleClick(n: number) {
     finished.value = true
     setTimeout(() => {
       resultado.value = `Ganador: ${player}`
-    }, 100)
+    }, 1)
   }
   if (turnos.value === 9) {
     finished.value = true
     setTimeout(() => {
       resultado.value = `Empate`
-      reset()
-    }, 100)
+    }, 1)
   }
 }
 function comprobarCasilla(n: number) {
@@ -100,6 +99,13 @@ function reset() {
 </template>
 
 <style lang="css" scoped>
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
 .resultado {
   z-index: -1;
   opacity: 0;
@@ -174,10 +180,10 @@ footer {
   width: fit-content;
 }
 .casilla {
-  color: #40798c;
+  position: relative;
+  color: #70a9a1;
   width: 100px;
   height: 100px;
-  border: 1px solid black;
   display: inline-block;
   cursor: pointer;
   display: flex;
@@ -185,5 +191,25 @@ footer {
   justify-content: center;
   font-size: 50px;
   font-weight: 700;
+  transition: background 0.2s ease;
+}
+.casilla:hover {
+  background: rgb(13, 42, 51);
+}
+.casilla:nth-child(1),
+.casilla:nth-child(2),
+.casilla:nth-child(4),
+.casilla:nth-child(5) {
+  border-right: 4px solid #70a9a1;
+  border-bottom: 4px solid #70a9a1;
+}
+.casilla:nth-child(3),
+.casilla:nth-child(6) {
+  border-bottom: 4px solid #70a9a1;
+}
+
+.casilla:nth-child(7),
+.casilla:nth-child(8) {
+  border-right: 4px solid #70a9a1;
 }
 </style>
