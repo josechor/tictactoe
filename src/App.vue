@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import TickTackToe from './views/TickTackToe.vue'
+import TicTacToe from './views/TicTacToe.vue'
 </script>
 
 <template>
@@ -8,7 +8,7 @@ import TickTackToe from './views/TickTackToe.vue'
       <h1>Tick-Tack-Toe</h1>
     </header>
     <main>
-      <TickTackToe />
+      <TicTacToe />
     </main>
   </div>
 </template>
